@@ -33,11 +33,32 @@
     <div class="col3">
         <select (change) = "onCityChange()">
             <option value="Banglore">Banglore</option>
-            <option value="Pune">Banglore</option>
-            <option value="Kanpur">Banglore</option>
-            <option value="Mumbai">Banglore</option>
-            <option value="Nagpur">Banglore</option>
+            <option value="Pune">Pune</option>
+            <option value="Kanpur">Kanpur</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Nagpur">Nagpur</option>
         </select>
     </div>
 </div>
 
+
+
+<!-- TWO WAY DATA binding -->
+ <!-- the same value in the input is assigned to the variable -->
+<div class="row">
+    <div class="col-3">
+        <input type="text" placeholder="This is for two way data binding" [(ngModel)]="firstName">
+    </div>
+
+    <div class="col3">
+        <select [(ngModel)]="selectedCity">
+            <option value="Banglore">Banglore</option>
+            <option value="Pune">Pune</option>
+            <option value="Kanpur">Kanpur</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Nagpur">Nagpur</option>
+        </select>
+        -{{selectedCity}}
+    </div>
+
+</div>
