@@ -5,10 +5,11 @@ import { UserComponent } from './components/user/user.component';
 import { SingleFileComponentComponent } from './components/single-file-component/single-file-component.component';
 import { DataBindingComponent } from "./components/data-binding/data-binding.component";
 import { NgIfDirectiveComponent } from "./components/ng-if-directive/ng-if-directive.component";
+import { NgForDirectiveComponent } from "./components/ng-for-directive/ng-for-directive.component";
 
 @Component({
   selector: 'app-root',
-  imports: [DataBindingComponent, NgIfDirectiveComponent],
+  imports: [NgIfDirectiveComponent, NgForDirectiveComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
