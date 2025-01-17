@@ -7,7 +7,7 @@ import { DataBindingComponent } from "./components/data-binding/data-binding.com
 
 @Component({
   selector: 'app-root',
-  imports: [AdminComponent, UserComponent, SingleFileComponentComponent, DataBindingComponent],
+  imports: [DataBindingComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

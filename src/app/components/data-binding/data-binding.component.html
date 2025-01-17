@@ -1,10 +1,43 @@
-<p>data-binding works!</p>
+<p>Data-binding works!</p>
 
-<!-- one way date binding -->
- <!-- 1. interpolation -->
-<div class="class">
+<!-- One-way data binding -->
+<!-- 1. Interpolation -->
+<div class="row">
     <div class="col-6">
-        <!-- interpolation writing vars in curly braces -->
-         <p>firstName => {{firstName}}</p>
+        Interpolation: writing variables in curly braces
+        <p>firstName => {{firstName}}</p>
+        <div>
+            {{rollnum}}
+        </div>
+        <span>{{isActive}}</span>
+    </div>
+
+    
+    <div class="col-6">
+        2. Property binding
+        <input type="text" [value]="firstName">
+        <br>
+        <input type="text" [placeholder]="myPlaceholder">
+        <br>
+        <div [class]="div1ClassName" style="height: 100px; width: 100px">
+            <!-- Content if any -->
+        </div>
     </div>
 </div>
+
+<div class="row">
+    3. event- binding
+    <div class="col-3">
+        <button class = "btn btn-success" (click)="showWelcomeMessage()">Show welcome text</button>
+    </div>
+    <div class="col3">
+        <select (change) = "onCityChange()">
+            <option value="Banglore">Banglore</option>
+            <option value="Pune">Banglore</option>
+            <option value="Kanpur">Banglore</option>
+            <option value="Mumbai">Banglore</option>
+            <option value="Nagpur">Banglore</option>
+        </select>
+    </div>
+</div>
+
