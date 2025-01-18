@@ -8,10 +8,11 @@ import { NgIfDirectiveComponent } from "./components/ng-if-directive/ng-if-direc
 import { NgForDirectiveComponent } from "./components/ng-for-directive/ng-for-directive.component";
 import { NgClassComponent } from "./components/ng-class/ng-class.component";
 import { NgStyleComponent } from "./components/ng-style/ng-style.component";
+import { ControlStatementComponent } from "./components/control-statement/control-statement.component";
 
 @Component({
   selector: 'app-root',
-  imports: [NgIfDirectiveComponent, NgForDirectiveComponent, NgClassComponent, NgStyleComponent],
+  imports: [NgIfDirectiveComponent, NgForDirectiveComponent, NgClassComponent, NgStyleComponent, ControlStatementComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
