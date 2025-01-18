@@ -7,10 +7,11 @@ import { DataBindingComponent } from "./components/data-binding/data-binding.com
 import { NgIfDirectiveComponent } from "./components/ng-if-directive/ng-if-directive.component";
 import { NgForDirectiveComponent } from "./components/ng-for-directive/ng-for-directive.component";
 import { NgClassComponent } from "./components/ng-class/ng-class.component";
+import { NgStyleComponent } from "./components/ng-style/ng-style.component";
 
 @Component({
   selector: 'app-root',
-  imports: [NgIfDirectiveComponent, NgForDirectiveComponent, NgClassComponent],
+  imports: [NgIfDirectiveComponent, NgForDirectiveComponent, NgClassComponent, NgStyleComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
