@@ -1,0 +1,16 @@
+<!-- we access the signal as a method -->
+ <p>
+    {{firstname()}}
+ </p>
+ <p>
+    <input type="text" [value]="lastname()">
+ </p>
+<p>
+    {{company}}
+</p>
+<p>
+   {{rollno()}}
+</p>
+<button (click) = "onIncrement()" class = "btn btn-success">
+   Increment
+</button>

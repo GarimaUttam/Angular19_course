@@ -9,10 +9,11 @@ import { NgForDirectiveComponent } from "./components/ng-for-directive/ng-for-di
 import { NgClassComponent } from "./components/ng-class/ng-class.component";
 import { NgStyleComponent } from "./components/ng-style/ng-style.component";
 import { ControlStatementComponent } from "./components/control-statement/control-statement.component";
+import { SignalComponent } from "./components/signal/signal.component";
 
 @Component({
   selector: 'app-root',
-  imports: [NgIfDirectiveComponent, NgForDirectiveComponent, NgClassComponent, NgStyleComponent, ControlStatementComponent],
+  imports: [NgIfDirectiveComponent, NgForDirectiveComponent, NgClassComponent, NgStyleComponent, ControlStatementComponent, SignalComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
