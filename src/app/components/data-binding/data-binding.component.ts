@@ -23,7 +23,6 @@ export class DataBindingComponent {
 
     this.isActive = false;
     console.log(this.isActive);
-    // this will 
     // this.showWelcomeMessage();
   }
 
