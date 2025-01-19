@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { AdminComponent } from "./components/admin/admin.component";
 import { UserComponent } from './components/user/user.component';
 import { SingleFileComponentComponent } from './components/single-file-component/single-file-component.component';
@@ -14,7 +14,7 @@ import { LinkedSignalComponent } from "./components/linked-signal/linked-signal.
 
 @Component({
   selector: 'app-root',
-  imports: [NgIfDirectiveComponent, NgForDirectiveComponent, NgClassComponent, NgStyleComponent, ControlStatementComponent, SignalComponent, LinkedSignalComponent],
+  imports: [NgIfDirectiveComponent, NgForDirectiveComponent, NgClassComponent, NgStyleComponent, ControlStatementComponent, SignalComponent, LinkedSignalComponent,RouterOutlet, RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
