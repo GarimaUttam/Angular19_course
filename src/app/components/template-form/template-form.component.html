@@ -1,0 +1,70 @@
+<div class="container">
+    <h2>User Form</h2>
+    <form #form="ngForm" class="row g-3 needs-validation">
+      <div class="col-md-4">
+        <label for="firstName">First name <span class="text-danger">*</span></label>
+        <input type="text" name="firstName" #fname="ngModel"[(ngModel)]="userObj.firstName" class="form-control" required>
+        <div class="text-danger">
+            @if(fname.errors?.['required'] && fname.touched && fname.dirty) {
+                <span>This is Required</span>
+                }
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="lastName">Last name</label>
+        <input type="text"minlength="7" #lName="ngModel" name="lastName" [(ngModel)]="userObj.lastName" class="form-control" required>
+        <div class="text-danger">
+            <span *ngIf="lName.errors?.['required'] && lName.touched">This is Required</span>
+            <span *ngIf="lName.errors?.['minlength'] && lName.touched">Min of 7 char are Required</span>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="userName">Username</label>
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend">&#64;</span>
+          <input type="text" name="userName" [(ngModel)]="userObj.userName" class="form-control" required>
+          <div class="invalid-feedback">
+            Please choose a username.
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="city">City</label>
+        <input type="text" name="city" [(ngModel)]="userObj.city" class="form-control" required>
+        <div class="invalid-feedback">
+          Please provide a valid city.
+        </div>
+      </div>
+      <div class="col-md-3">
+        <label for="state">State</label>
+        <select name="state" class="form-select" [(ngModel)]="userObj.state" required>
+          <option selected disabled value="">Choose...</option>
+          <option value="AL">Alabama</option>
+          <option value="CA">California</option>
+          <option value="NY">New York</option>
+        </select>
+        <div class="invalid-feedback">
+          Please select a valid state.
+        </div>
+      </div>
+      <div class="col-md-3">
+        <label for="zipCode">Zip</label>
+        <input type="text" name="zipCode" [(ngModel)]="userObj.zipCode" class="form-control" required>
+      </div>
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" name="terms" [(ngModel)]="userObj.isTermsAggree" type="checkbox" required>
+          <label class="form-check-label" for="terms">
+            Agree to terms and conditions
+          </label>
+          <div class="invalid-feedback">
+            You must agree before submitting.
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-primary" type="button" [disabled]="form.invalid" (click)="onSave()">Submit form</button>
+      </div>
+    </form>
+  </div>
+  
