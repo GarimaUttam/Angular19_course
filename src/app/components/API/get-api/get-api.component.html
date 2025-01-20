@@ -1,1 +1,51 @@
+<h1>Get API</h1>
+<div class="row">
+    <div class="col-3">
+        <button (click)="getUsers()" class="btn btn-success">
+            Load users
+        </button>
+        <button (click)="getProducts()" class="btn btn-success">
+            Load Products
+        </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr no</th>
+                    <th>Name</th>
+                    <th>User name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Website</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (item of userList; track $index) {
+                    <tr>
+                        <td>{{$index+1}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.username}}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.phone}}</td>
+                        <td>{{item.website}}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- //showing the products in the dropdown -->
+    <!-- <div class="col-5">
+        <select>
+            @for (item of productList; track $index) {
+                <option [value]="item.product_id">{{item.name}}</option>
+            }
+        </select>
+    </div> -->
+</div>
+
 
