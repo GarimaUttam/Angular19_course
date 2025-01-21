@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { AfterViewInit, Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -8,7 +8,24 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './post-api.component.html',
   styleUrl: './post-api.component.css'
 })
-export class PostAPIComponent {
+export class PostAPIComponent implements OnInit, AfterViewInit{
+
+  // ngOninit is initialised when our component is initilaised
+  // used to tirgger the API call function
+  ngOnInit(): void {
+    this.getAllCars();
+    debugger;
+  }
+
+  //Constructor is used to initialise the variable on the page load
+  firstName: string;
+
+  constructor(){
+    this.firstName = "";
+  }
+  ngAfterViewInit(): void {
+    console.log("ngAfterViewInit", performance.now());
+  }
 
   http = inject(HttpClient);
   carList: any[] = [];
