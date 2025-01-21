@@ -9,6 +9,7 @@ import { TemplateFormComponent } from './components/template-form/template-form.
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 import { GetAPIComponent } from './components/API/get-api/get-api.component';
 import { PostAPIComponent } from './components/API/post-api/post-api.component';
+import { CustomerComponent } from './components/API/customer/customer.component';
 
 export const routes: Routes = [
     {
@@ -55,5 +56,8 @@ export const routes: Routes = [
     {
         path:'post-api',
         component:PostAPIComponent
+    },{
+        path:'customer',
+        component:CustomerComponent
     }
 ];
