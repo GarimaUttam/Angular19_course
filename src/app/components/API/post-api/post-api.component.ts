@@ -58,4 +58,19 @@ export class PostAPIComponent {
       }
     })
   }
+
+  onDelete(id: number){
+    const isDelete = confirm("Are you sure to delete this field");
+    debugger;
+    if(isDelete == true){
+          this.http.delete("https://freeapi.gerasim.in/api/CarRentalApp/DeleteCarByCarId?carid=" + id).subscribe((res:any) => {
+            if(res.result) {
+              alert("Car deleted Successfully");
+              this.getAllCars();
+            } else{
+              alert(res.message);
+            }
+          })
+        }
+  }
 }
