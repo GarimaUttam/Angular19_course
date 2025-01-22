@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { TabsComponent } from "../../../reusable/tabs/tabs.component";
 
 @Component({
   selector: 'app-post-api',
-  imports: [FormsModule],
+  imports: [FormsModule, TabsComponent],
   templateUrl: './post-api.component.html',
   styleUrl: './post-api.component.css'
 })
@@ -16,7 +17,11 @@ export class PostAPIComponent implements OnInit, AfterViewInit{
     this.getAllCars();
     debugger;
   }
-
+  currentTab: string = 'carList';
+  onTabchange(tabName: string){
+    debugger;
+    this.currentTab = tabName;
+  }
   //Constructor is used to initialise the variable on the page load
   firstName: string;
 

@@ -12,45 +12,55 @@
     </div> -->
 </div>
 
+<div class="row">
+    <div class="col-12 text-center">
+        <app-tabs [tabList]="['carList', 'NewCar Form']" (onTabClicked)="onTabchange($event)"></app-tabs>
+    </div>
+</div>
+--{{currentTab}}
+
 <div class="row pt-2">
-    <div class="col-7">
-        <div class="card">
-            <div class="card-header bg-warning">
-                <h5>Car List</h5>
-            </div>
-            <div class="card-body">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Sr No</th>
-                            <th>Brand</th>
-                            <th>Model</th>
-                            <th>Req No</th>
-                            <th>Daily rate</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        @for (item of carList; track $index) {
+    @if(currentTab == 'carList'){
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-warning">
+                    <h5>Car List</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
                             <tr>
-                                <td>{{$index+1}}</td>
-                                <td>{{item.brand}}</td>
-                                <td>{{item.model}}</td>
-                                <td>{{item.regNo}}</td>
-                                <td>{{item.dailyRate}}</td>
-                                <td><button class="btn btn-success" (click)="onEdit(item)">Edit</button></td>
-
-                                <td><button class="btn btn-danger" (click)="onDelete(item.carId)">Delete</button></td>
+                                <th>Sr No</th>
+                                <th>Brand</th>
+                                <th>Model</th>
+                                <th>Req No</th>
+                                <th>Daily rate</th>
+                                <th>Actions</th>
                             </tr>
-                        }
-                    </tbody>
-                </table>
+                        </thead>
+    
+                        <tbody>
+                            @for (item of carList; track $index) {
+                                <tr>
+                                    <td>{{$index+1}}</td>
+                                    <td>{{item.brand}}</td>
+                                    <td>{{item.model}}</td>
+                                    <td>{{item.regNo}}</td>
+                                    <td>{{item.dailyRate}}</td>
+                                    <td><button class="btn btn-success" (click)="onEdit(item)">Edit</button></td>
+    
+                                    <td><button class="btn btn-danger" (click)="onDelete(item.carId)">Delete</button></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="col-5">
+    
+    }
+   @else {
+    <div class="col-12">
         <div class="card">
             <div class="card-header bg-warning">
                 <h5>Create New Car</h5>
@@ -99,4 +109,6 @@
             </div>
         </div>
     </div>
+   }
+   
 </div>
