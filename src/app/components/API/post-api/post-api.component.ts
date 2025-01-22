@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, inject, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, OnInit , ViewChild} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TabsComponent } from "../../../reusable/tabs/tabs.component";
 import { Car, ICarList } from '../../../model/car';
@@ -18,6 +18,21 @@ export class PostAPIComponent implements OnInit, AfterViewInit{
     this.getAllCars();
     debugger;
   }
+  @ViewChild('txtcity') cityTextBox : ElementRef | undefined;
+  // creating view child of the reusable components
+  @ViewChild(TabsComponent) myTabviewChild: TabsComponent | undefined;
+
+
+  readCity(){
+    debugger;
+    const city = this.cityTextBox?.nativeElement.value;
+    if(this.cityTextBox){
+      this.cityTextBox.nativeElement.style.color ="red";
+    }
+
+    const val = this.myTabviewChild?.currentclickedTab;
+  }
+
   currentTab: string = 'carList';
   onTabchange(tabName: string){
     debugger;
