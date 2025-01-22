@@ -1,4 +1,28 @@
 <p>ng-for-directive works!!</p>
+<div class="row">
+    <div class="col-3">
+        courseName => {{courseName}}
+        <br>
+        Uppercase => {{courseName | uppercase}}
+    </div>
+    <div class="col-3">
+        Lowercase => {{courseName | lowercase}}
+    </div>
+    <div class="col-3">
+        studetObj => {{studentObj}}
+        <br>
+        studentObj => {{studentObj | json}}
+    </div>
+    <div class="col-3">
+        currentDate => {{currentDate}}
+        <br>
+        currentDate => {{currentDate | date:'dd-MMM-yy'}}
+        <br>
+        currentDate => {{currentDate | date:'dd/MM/yyyy'}}
+        <br>
+        date only => {{currentDate | date: 'hh:mm:ss'}}
+    </div>
+</div>
 
 <div class="row">
     <div class="col-2">
@@ -40,8 +64,8 @@
             <tr *ngFor="let emp of employeeArray;let srno = index">
                 <td>{{srno + 1}}</td>
                 <td>{{emp.name}}</td>
-                <td>{{emp.company}}</td>
-                <td>{{emp.city}}</td>
+                <td>{{emp.company | na}}</td>
+                <td>{{emp.city | uppercase}}</td>
             </tr>
         </tbody>
     </table>

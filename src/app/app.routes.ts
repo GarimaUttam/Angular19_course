@@ -12,6 +12,7 @@ import { PostAPIComponent } from './components/API/post-api/post-api.component';
 import { CustomerComponent } from './components/API/customer/customer.component';
 import { ResourceAPIComponent } from './components/resource-api/resource-api.component';
 import { LifeCycleComponent } from './components/life-cycle/life-cycle.component';
+import { NgForDirectiveComponent } from './components/ng-for-directive/ng-for-directive.component';
 
 export const routes: Routes = [
     {
@@ -26,6 +27,10 @@ export const routes: Routes = [
     {
         path: 'ng-class',
         component:NgClassComponent
+    },
+    {
+        path: 'ng-for',
+        component:NgForDirectiveComponent
     },
     {
         path: 'dataBinding',
