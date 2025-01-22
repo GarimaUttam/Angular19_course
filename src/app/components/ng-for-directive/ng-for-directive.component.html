@@ -58,6 +58,7 @@
                 <th>name</th>
                 <th>company</th>
                 <th>city</th>
+                <th>attendance</th>
             </tr>
         </thead>
         <tbody>
@@ -66,6 +67,9 @@
                 <td>{{emp.name}}</td>
                 <td>{{emp.company | na}}</td>
                 <td>{{emp.city | uppercase}}</td>
+                <td>
+                    <app-progress-bar [progressValue]="emp.attendance"></app-progress-bar>
+                </td>
             </tr>
         </tbody>
     </table>
