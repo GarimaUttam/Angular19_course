@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TabsComponent } from "../../../reusable/tabs/tabs.component";
+import { Car, ICarList } from '../../../model/car';
 
 @Component({
   selector: 'app-post-api',
@@ -33,17 +34,8 @@ export class PostAPIComponent implements OnInit, AfterViewInit{
   }
 
   http = inject(HttpClient);
-  carList: any[] = [];
-  carObj: any = {
-      "carId": 0,
-      "brand": "",
-      "model": "",
-      "year": "",
-      "color": "",
-      "dailyRate": "",
-      "carImage": "",
-      "regNo": ""
-  }
+  carList: ICarList[] = [];
+  carObj: Car = new Car();
   
   getAllCars(){
     this.http.get("https://freeapi.miniprojectideas.com/api/CarRentalApp/GetCars").subscribe((res:any) => {
@@ -60,6 +52,8 @@ export class PostAPIComponent implements OnInit, AfterViewInit{
       if(res.result) {
         alert("Car created Successfully");
         this.getAllCars();
+        this.carObj = new Car();
+
       } else{
         alert(res.message);
       }
