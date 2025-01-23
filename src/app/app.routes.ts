@@ -16,6 +16,7 @@ import { NgForDirectiveComponent } from './components/ng-for-directive/ng-for-di
 import { LoginComponent } from './components/login/login.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { authGuard } from './guard/auth.guard';
+import { NgTempNgContainerComponent } from './components/ng-temp-ng-container/ng-temp-ng-container.component';
 
 export const routes: Routes = [
     {
@@ -87,6 +88,10 @@ export const routes: Routes = [
             {
                 path:'life-cycle',
                 component:LifeCycleComponent
+            },
+            {
+                path:'temp-container',
+                component:NgTempNgContainerComponent
             }
         ]
     }
