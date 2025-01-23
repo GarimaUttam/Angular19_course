@@ -31,7 +31,9 @@ export class LoginComponent {
       debugger;
       localStorage.setItem("angular19user", res.data.userId);
       localStorage.setItem("angular19Token", res.data.token);
+      localStorage.setItem("angular19TokenData", JSON.stringify(res.data));
       this.router.navigateByUrl("admin");
+  
     }, error => {
       debugger;
       alert("wrong credentials")
