@@ -26,18 +26,11 @@ export class LoginComponent {
 
   onLogin() {
     debugger;
-    // if(this.loginObj.username == "admin" && this.loginObj.password == "1122"){
-    //   this.router.navigateByUrl("admin");
-    // }
-    // else{
-    //   alert("Wrong credentials");
-    // }
-    
-
     //doing API call integration instead of hardcoding it
     this.http.post("https://projectapi.gerasim.in/api/UserApp/login", this.apiLoginObj).subscribe((res: any) => {
       debugger;
       localStorage.setItem("angular19user", res.data.userId);
+      localStorage.setItem("angular19Token", res.data.token);
       this.router.navigateByUrl("admin");
     }, error => {
       debugger;
